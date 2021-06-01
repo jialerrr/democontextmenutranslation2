@@ -26,26 +26,18 @@ public class MainActivity extends AppCompatActivity {
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        menu.add(0,0,0,"English");
-        menu.add(0,1,1,"Italian");
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-            if (item.getItemId() == 0) { //check whether the selected menu item ID is 0
-                //code for action
+        int id = item.getItemId();
+
+        if (id == R.id.EnglishSelection) {
                 tvTranslatedText.setText("Hello");
 
                 return true; //menu item successfully handled
-            } else if (item.getItemId() == 1) { //check if the selected menu item ID is 1
+        } else if (id == R.id.ItalianSelection) {//check if the selected menu item ID is 1
                 //code for action
                 tvTranslatedText.setText("Ciao");
 
